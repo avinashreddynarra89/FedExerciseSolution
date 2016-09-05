@@ -67,3 +67,7 @@ header
 	font-size:14px;
 	color:green;
 }
+.overflowHidden
+{
+	overflow-x:hidden;
+}

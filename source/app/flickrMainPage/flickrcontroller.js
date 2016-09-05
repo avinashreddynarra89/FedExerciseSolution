@@ -8,13 +8,16 @@
 	
 	function FlickrController ($scope,$rootScope,FlickrService){
 		
+		/***Service to Fetch All the Photos ***/
 		FlickrService.fetchImages(successData,errorData);
 		
+		/***Success CallBack Function ****/
 		function successData(response)
 		{
 			$scope.photos = response.photos.photo;
 		}
 		
+		/***Error CallBack Function ****/
 		function errorData(response)
 		{
 			
