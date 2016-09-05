@@ -1,0 +1,49 @@
+
+
+<div class="row" style="padding:20px;">
+ 	
+ <div class="col-md-12">	
+	<div class="form-group col-md-6 col-xs-12">
+	        <div class="has-feedback">
+	        <input type="text" class="form-control" placeholder="Search By Photo Title" ng-model="searchPhoto" /> <span
+	            class="glyphicon glyphicon-search form-control-feedback"></span>
+	        </div>
+      </div>
+	
+		<div class="form-group col-md-6 col-xs-12">
+			<label>Order By:</label>
+				<select data-ng-model="sortByAplhabetical">
+					<option value="title">Title (A-Z)</option>
+				<option value="-title">Title (Z-A)</option>
+				</select>
+			
+		</div>
+ </div>	
+ 
+ <div class="row" style="padding:20px;">
+ 	
+ 	<div class="col-xs-12 col-sm-6 col-md-4" ng-repeat="photo in photos | filter: {'title': searchPhoto} | orderBy: sortByAplhabetical">
+            <div class="thumbnail">
+            	<div class="row">
+            		<div class="col-md-8">
+		                <div class="img-wrapper">
+		                   <img class="maxWidth" height="250" width="450" ng-src="https://farm{{photo.farm}}.staticflickr.com/{{photo.server}}/{{photo.id}}_{{photo.secret}}.jpg" alt="{{photo.title}}">
+		                </div>
+		              </div>  
+		              <div class="col-md-4">
+		              	<div class="photo-title">
+		              		<span>Title:</span>
+		              		<span>{{photo.title}}</span>
+		              	</div>
+		              	<div class="padding-top-10 photoId">
+		              		<span>Id:</span>
+		              		<span>{{photo.id}}</span>
+		              	</div>
+		              </div>
+	             </div>
+                
+            </div>
+        </div>
+ </div>	
+
+</div>

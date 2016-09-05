@@ -1,0 +1,5 @@
+{
+      "directory": "source/bower_components",
+      "strict-ssl": false,
+      "https-proxy": ""
+}
